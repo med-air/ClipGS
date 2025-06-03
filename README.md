@@ -1,4 +1,4 @@
-# PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics
+# ClipGS: Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data
 
 The source code of this website is borrowed from [nerfies](https://github.com/nerfies/nerfies.github.io). We thank the authors for sharing the template.
 
