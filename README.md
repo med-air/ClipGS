@@ -14,7 +14,8 @@
     ·
     <a href="https://scholar.google.com/citations?user=4nk3hAgAAAAJ&hl=en"><strong>Zhenya Yang</strong></a>
     ·
-    <a href="https://www.researchgate.net/profile/Ruiyang_Li9"><strong>Ruiyang Li</strong></a>
+    <a href="https://www.researchgate.net/profile/Ruiyang_Li9"><strong>Ruiyang Li</strong></a> 
+    <br />
     ·
     <a href="https://shiqiu0419.github.io/"><strong>Shi Qiu</strong></a>
     ·
