@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content=" Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data.">
+  <meta name="keywords" content="ClipGS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipGS: Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/app.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <style>
+    .gradient-text {
+        background-image: linear-gradient(to right, #b59f00, green, blue);
+        /* Darker yellow */
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+        font-weight: bold;
+        /* Make the text bold */
+    }
+
+    .title.is-1.publication-title {
+        font-size: 48px;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #b59f00, green, blue);
+        /* Darker yellow */
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+    }
+
+    .interpolation-image-small {
+        width: 75%;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .subtitle.has-text-centered-small {
+        width: 75%;
+        margin: 0 auto;
+    }
+    </style>
+
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span>ClipGS</span>: Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data</h1>
+            <h2 class="subtitle is-3 publication-subtitle">MICCAI 2025</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/chengkunli96/">Chengkun Li</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="https://dblp.org/pid/239/9969.html">Yuqi Tong</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="https://ck-kai.github.io/">Kai Chen</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=4nk3hAgAAAAJ&hl=en">Zhenya Yang</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="https://www.researchgate.net/profile/Ruiyang_Li9">Ruiyang Li</a><sup>1</sup> · </span>
+              <br>
+              <span class="author-block">
+                <a href="https://shiqiu0419.github.io/">Shi Qiu</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="https://www.med.cuhk.edu.hk/staff/dr-chan-ying-kuen-jason">Jason Ying-Kuen Chan</a><sup>2</sup> · </span>
+              <span class="author-block">
+                <a href="http://www.cse.cuhk.edu.hk/~pheng/">Pheng-Ann Heng</a><sup>1</sup> · </span>
+              <span class="author-block">
+                <a href="http://www.cse.cuhk.edu.hk/~qdou/">Qi Dou</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Dept. of Computer Science and Engineering, The Chinese University of Hong Kong</span><br>
+              <span class="author-block"><sup>2</sup>Dept. of Otorhinolaryngology, Head and Neck Surgery, The Chinese University of Hong Kong</span>
+            </div>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contributions</span>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/med-air/ClipGS"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code Coming Soon</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video> -->
+        <img src="./assets/images/teaser.png" class="interpolation-image-small" />
+        <h2 class="subtitle has-text-centered-small">
+          <span class="gradient-text" font-weight: bold>ClipGS</span> is the first interactive cinematic rendering for volumetric medical data visualization that 
+          allow users to observe the internal structures and details under the queried view and clipping plane.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%" onloadedmetadata="this.playbackRate=0.75">
+              <source src="./assets/videos/video2_slide1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-plane">
+            <video poster="" id="plane" autoplay controls muted loop playsinline height="100%" onloadedmetadata="this.playbackRate=0.75">
+              <source src="./assets/videos/video2_slide2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fox">
+            <video poster="" id="fox" autoplay controls muted loop playsinline height="100%" onloadedmetadata="this.playbackRate=0.75">
+              <source src="./assets/videos/video2_slide4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-toast">
+            <video poster="" id="toast" autoplay controls muted loop playsinline height="100%" onloadedmetadata="this.playbackRate=0.75">
+              <source src="./assets/videos/video2_slide3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ruins">
+            <video poster="" id="ruins" autoplay controls muted loop playsinline height="100%" onloadedmetadata="this.playbackRate=0.75">
+              <source src="./assets/videos/video2_slide5.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The visualization of volumetric medical data is crucial for enhancing diagnostic accuracy and improving surgical planning and education. 
+              Cinematic rendering techniques significantly enrich this process by providing high-quality visualizations that convey intricate anatomical details, thereby facilitating better understanding and decision-making in medical contexts. 
+              However, the high computing cost and low rendering speed limit the requirement of interactive visualization in practical applications. In this paper, we introduce <span class="gradient-text">ClipGS</span>, an innovative Gaussian splatting framework with the clipping plane supported, for interactive cinematic visualization of volumetric medical data. 
+              To address the challenges posed by dynamic interactions, we propose a learnable truncation scheme that automatically adjusts the visibility of Gaussian primitives in response to the clipping plane. 
+              Besides, we also design an adaptive adjustment model to dynamically adjust the deformation of Gaussians and refine the rendering performance.
+              We validate our method on five volumetric medical data (including CT and anatomical slice data), and reach an average 36.635 PSNR rendering quality with 156 FPS and 16.1 MB model size, outperforming state-of-the-art methods in rendering quality and efficiency.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://drive.google.com/file/d/1eh7vxRxer7gfvPhs8jDE56oRjayBc9oe/preview"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Overview</h2>
+      <img src="./assets/images/method.png" class="interpolation-image" />
+      <div style="margin-top: 1rem;">
+        <p>
+            For a given volumetric medical data, our method implements a real-time cinematic rendering for a given query view and clipping plane. 
+            Firstly, we use a ray-tracing renderer to generate a sparse cinematic image sequence under random camera views and random clipping plane.
+            Then, we optimize a random initialized 3D Gaussian point cloud from these images. 
+            For doing this, We introduce a learnable attribute to the Gaussian primitive to automatically control the visibility with the query clipping plane. 
+            To refine the rendering quality, we design an adaptive adjustment model to dynamically adjust the position and shape of visible Gaussian under the specific clipping plane. 
+            During Trainning, we employ a two-step optimization strategy in our method. Firstly, we train the GS with our learnable truncation scheme to obtain a coarse initialization.
+            Then, we start the adaptive adjustment to refine the rendering performance and keep the consistency in the clipping plane dimension
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{xie2023physgaussian,
+      title={PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics}, 
+      author={Xie, Tianyi and Zong, Zeshun and Qiu, Yuxing and Li, Xuan and Feng, Yutao and Yang, Yin and Jiang, Chenfanfu},
+      journal={arXiv preprint arXiv:2311.12198},
+      year={2023},
+}</code></pre>
+    </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/abs/2311.12198">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/XPandora/PhysGaussian" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              The source code of this website is borrowed from <a
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+              We thank the authors for sharing the template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
