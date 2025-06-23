@@ -6,7 +6,7 @@
   <p align="center">
    MICCAI, 2025
     <br />
-    <a href="https://github.com/chengkunli96/"><strong>Chengkun Li</strong></a>
+    <a href="https://chengkunli96.github.io/"><strong>Chengkun Li</strong></a>
     ·
     <a href="https://dblp.org/pid/239/9969.html"><strong>Yuqi Tong</strong></a>
     ·
