@@ -4,7 +4,7 @@
   <h1 align="center">ClipGS: Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data</h1>
 
   <p align="center">
-   MICCAI 2025, Early Accept
+   MICCAI 2025, Oral
     <br />
     <a href="https://chengkunli96.github.io/"><strong>Chengkun Li</strong></a>
     ·
